@@ -100,6 +100,7 @@ self_identification:
   disability: "[Yes/No]"
   ethnicity: "[Ethnicity]"
 
+
 legal_authorization:
   eu_work_authorization: "[Yes/No]"
   us_work_authorization: "[Yes/No]"
@@ -109,6 +110,15 @@ legal_authorization:
   legally_allowed_to_work_in_eu: "[Yes/No]"
   legally_allowed_to_work_in_us: "[Yes/No]"
   requires_eu_sponsorship: "[Yes/No]"
+  canada_work_authorization: "[Yes/No]"
+  requires_canada_visa: "[Yes/No]"
+  legally_allowed_to_work_in_canada: "[Yes/No]"
+  requires_canada_sponsorship: "[Yes/No]"
+  uk_work_authorization: "[Yes/No]"
+  requires_uk_visa: "[Yes/No]"
+  legally_allowed_to_work_in_uk: "[Yes/No]"
+  requires_uk_sponsorship: "[Yes/No]"
+
 
 work_preferences:
   remote_work: "[Yes/No]"
