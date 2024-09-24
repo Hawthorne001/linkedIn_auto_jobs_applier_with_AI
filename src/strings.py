@@ -14,24 +14,6 @@ Personal Information: {resume_section}
 Question: {question}
 """
 
-
-
-# Personal Information Template
-personal_information_template = """
-Answer the following question based on the provided personal information.
-
-## Rules
-- Answer questions directly.
-
-## Example
-My resume: John Doe, born on 01/01/1990, living in Milan, Italy.
-Question: What is your city?
- Milan
-
-Personal Information: {resume_section}
-Question: {question}
-"""
-
 # Self Identification Template
 self_identification_template = """
 Answer the following question based on the provided self-identification details.
@@ -199,7 +181,7 @@ Answer the following question based on the provided language skills.
 - Answer questions directly.
 - If it seems likely that you have the experience, even if not explicitly defined, answer as if you have the experience.
 - If unsure, respond with "I have no experience with that, but I learn fast" or "Not yet, but willing to learn."
-- Keep the answer under 140 characters.
+- Keep the answer under 140 characters. Do not add any additional languages what is not in my experience
 
 ## Example
 My resume: Fluent in Italian and English.
@@ -256,7 +238,6 @@ This comprehensive overview will serve as a guideline for the recruitment proces
 
 # Job Description Summary"""
 
-
 coverletter_template = """
 Compose a brief and impactful cover letter based on the provided job description and resume. The letter should be no longer than three paragraphs and should be written in a professional, yet conversational tone. Avoid using any placeholders, and ensure that the letter flows naturally and is tailored to the job.
 
@@ -282,31 +263,30 @@ Please write the cover letter in a way that directly addresses the job role and 
 numeric_question_template = """
 Read the following resume carefully and answer the specific questions regarding the candidate's experience with a number of years. Follow these strategic guidelines when responding:
 
-
 1. **Related and Inferred Experience:**
-   - **Similar Technologies:** If experience with a technology is not explicitly stated, but the candidate has experience with similar or related technologies, respond with a number of years that reflects this related experience. For example, if the candidate has experience with Python and projects that involve technologies similar to Java, consider a plausible number of years for Java.
-   - **Projects and Studies:** Examine the candidate’s projects and studies to infer skills not explicitly mentioned. Complex and advanced projects often indicate deeper expertise. For instance, if a project involves MQTT, you might infer IoT experience even if it's not explicitly mentioned.
+   - **Similar Technologies:** If experience with a specific technology is not explicitly stated, but the candidate has experience with similar or related technologies, provide a plausible number of years reflecting this related experience. For instance, if the candidate has experience with Python and projects involving technologies similar to Java, estimate a reasonable number of years for Java.
+   - **Projects and Studies:** Examine the candidate’s projects and studies to infer skills not explicitly mentioned. Complex and advanced projects often indicate deeper expertise.
 
 2. **Indirect Experience and Academic Background:**
-   - **Relevant Projects:** Consider the types of projects the candidate has worked on and the time spent on each project. Advanced projects suggest deeper skills. For example, a project involving MQTT packet parsing suggests MQTT and possibly IoT skills.
-   - **Roles and Responsibilities:** Evaluate the roles and responsibilities held. If a role suggests knowledge of specific technologies or skills, provide a number based on that experience.
-   - **Type of University and Studies:** Also consider the type of university and the duration of studies.
-
-3. **Inference Over Default Response:** Always strive to infer experience based on the available information. If direct experience cannot be confirmed, use related skills, projects, and academic background to estimate a plausible number of years. Avoid defaulting to 0 if you can infer any relevant experience.
-
-4. **Handling Experience Estimates:**
-   - **For Low Experience (up to 5 years):** It is acceptable to provide inferred experience a lot.Aim to keep the values as high as possible avoid using "0".
-   - **For High Experience:** For high levels of experience, ensure the number provided is as certain as possible and based on clear evidence from the resume. Avoid making inferences for high experience levels unless the evidence is strong.
+   - **Type of University and Studies:** Consider the type of university and course followed.
+   - **Exam Grades:** Consider exam grades achieved. High grades in relevant subjects can indicate stronger proficiency and understanding.
+   - **Relevant thesis:** Consider the thesis of the candidate has worked. Advanced projects suggest deeper skills.
+   - **Roles and Responsibilities:** Evaluate the roles and responsibilities held to estimate experience with specific technologies or skills.
 
 
-## Rules
-- Answer the question directly (only number).
+3. **Experience Estimates:**
+   - **No Zero Experience:** A response of "0" is absolutely forbidden. If direct experience cannot be confirmed, provide a minimum of "2" years based on inferred or related experience.
+   - **For Low Experience (up to 5 years):** Estimate experience based on inferred bacherol, skills and projects, always providing at least "2" years when relevant.
+   - **For High Experience:** For high levels of experience, provide a number based on clear evidence from the resume. Avoid making inferences for high experience levels unless the evidence is strong.
+
+4. **Rules:**
+   - Answer the question directly with a number, avoiding "0" entirely.
 
 ## Example 1
 ```
 ## Curriculum
 
-I had a degree in computer science. I have worked 2 years with  MQTT protocol.
+I had a degree in computer science. I have worked  years with  MQTT protocol.
 
 ## Question
 
@@ -314,7 +294,7 @@ How many years of experience do you have with IoT?
 
 ## Answer
 
-2
+4
 ```
 ## Example 1
 ```
@@ -389,7 +369,6 @@ Options: [1-2, 3-5, 6-10, 10+]
 {options}
 
 ## """
-
 
 try_to_fix_template = """\
 The objective is to fix the text of a form input on a web page.
